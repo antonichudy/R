@@ -1,6 +1,5 @@
 ---
 title: "Przetwarzanie danych w R i Python"
-subtitle: "Praca domowa nr 1"
 author: "Antoni Chudy"
 date: "18-04-2024"
 output: html_document
@@ -11,15 +10,6 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
 # Wstęp
-
-Raport przedstawia wyniki otrzymane podczas realizacji pracy domowej, której celem było
-rozwiązanie pięciu zadań. Każde z nich polegało na napisaniu podanych zapytań w języku SQL używając:
-
-* *funkcji bazowych języka R* 
-
-* *pakietu dplyr*
-
-* *pakietu data.table*
 
 Poprawność uzyskanych wyników zostanie zbadana za pomocą funkcji *compare*.
 Ponadto dla wszystkich czterech sposobów rozwiązania każdego zadania zostaną porównane czasy ich wykonania za pomocą pakietu *microbenchmark*.
@@ -33,7 +23,7 @@ library(microbenchmark)
 library(sqldf)
 library(dplyr)
 library(data.table)
-source("Chudy_Antoni_313476_pd1.R")
+source("Data_analysis.R")
 ```
 
 ```{r}
@@ -205,5 +195,5 @@ W pierwszym kroku znajdujemy liczbę odpowiedzi dla każdego posta. Następnie o
 
 Wyniki otrzymane za pomocą funkcji *microbenchmark* pokazują, że zapytania napisane z wykorzystaniem *pakietu data.table* wykonują się w najkrótszym czasie.
 Możemy zauważyć, że *pakiet dplyr* pozwala na uzyskanie rozwiązań w czasie krótszym od rozwiązań referencyjnych w SQL oraz funkcji bazowych. 
-Według mnie najbardziej przyjemny do pracy z danymi jest *pakiet dplyr*. 
+
 
