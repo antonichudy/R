@@ -1,1 +1,1 @@
-Data analysis in R - comparing dplyr and datatable packages with basic R functions.
+Data analysis using SQL, R base functions, dplyr and datatable packages
