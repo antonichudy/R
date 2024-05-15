@@ -5,10 +5,6 @@ library(sqldf)
 library(dplyr)
 library(data.table)
 
-# -----------------------------------------------------------------------------#
-# Task 1
-# -----------------------------------------------------------------------------#
-
 sqldf_1 <- function(Posts, Users){
   sqldf::sqldf("
   SELECT Location, COUNT(*) AS Count
@@ -62,10 +58,6 @@ data.table_1 <- function(PostsDT, UsersDT){
   tmp1 <- tmp1[order(-Count)][1:10]
 }
 
-# -----------------------------------------------------------------------------#
-# Task 2
-# -----------------------------------------------------------------------------#
-
 sqldf_2 <- function(Posts, PostLinks){
   sqldf::sqldf("
   SELECT Posts.Title, RelatedTab.NumLinks
@@ -115,9 +107,6 @@ data.table_2 <- function(PostsDT, PostLinksDT){
   result <- tmp2[PostTypeId == 1, .(Title, NumLinks)][order(-NumLinks)]
 }
 
-# -----------------------------------------------------------------------------#
-# Task 3
-# -----------------------------------------------------------------------------#
 
 sqldf_3 <- function(Comments, Posts, Users){
   sqldf::sqldf("
@@ -182,10 +171,6 @@ data.table_3 <- function(CommentsDT, PostsDT, UsersDT){
   tmp3 <- tmp3[, .(Title, CommentCount, ViewCount, CommentsTotalScore, DisplayName, Reputation, Location)][1:10]
 }
 
-
-# -----------------------------------------------------------------------------#
-# Task 4
-# -----------------------------------------------------------------------------#
 
 sqldf_4 <- function(Posts, Users){
   sqldf::sqldf("
@@ -274,10 +259,6 @@ data.table_4 <- function(PostsDT, UsersDT){
   result2 <- result2[order(-AnswersNumber), ][1:5]
 }
 
-
-# -----------------------------------------------------------------------------#
-# Task 5
-# -----------------------------------------------------------------------------#
 
 sqldf_5 <- function(Posts, Users){
   sqldf::sqldf("
